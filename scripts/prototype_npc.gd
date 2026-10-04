@@ -2,22 +2,33 @@ extends Node2D
 
 var player: CharacterBody2D
 var status_label: Label
+var dialogue_callback: Callable
 var talked := false
+var prompt_cooldown := 0.0
 
-func setup(target: CharacterBody2D, label: Label) -> void:
+func setup(target: CharacterBody2D, label: Label, callback: Callable = Callable()) -> void:
     player = target
     status_label = label
+    dialogue_callback = callback
     queue_redraw()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+    prompt_cooldown = maxf(prompt_cooldown - delta, 0.0)
     if not is_instance_valid(player):
         return
-    if global_position.distance_to(player.global_position) <= 70.0:
+
+    var nearby := global_position.distance_to(player.global_position) <= 70.0
+    if nearby:
         if Input.is_action_just_pressed("interact"):
             talked = true
-            status_label.text = "Guide: The old road has been quiet since the river changed."
-        elif not talked:
+            var line := "The old road has been quiet since the river changed."
+            status_label.text = "Guide: " + line
+            if dialogue_callback.is_valid():
+                dialogue_callback.call(line)
+        elif not talked and prompt_cooldown <= 0.0:
             status_label.text = "Press E near the guide to talk."
+            prompt_cooldown = 0.5
+
     queue_redraw()
 
 func _draw() -> void:
