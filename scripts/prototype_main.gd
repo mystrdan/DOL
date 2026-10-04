@@ -12,6 +12,7 @@ var enemy_defeated := false
 var interactable: Area2D
 
 func _ready() -> void:
+    _setup_input_map()
     player = $Player
     objective_label = $HUD/Objective
     status_label = $HUD/Status
@@ -26,6 +27,30 @@ func _ready() -> void:
     _setup_interaction()
     _set_stage(0)
     queue_redraw()
+
+func _setup_input_map() -> void:
+    _ensure_key_action("move_left", [KEY_A, KEY_LEFT])
+    _ensure_key_action("move_right", [KEY_D, KEY_RIGHT])
+    _ensure_key_action("move_up", [KEY_W, KEY_UP])
+    _ensure_key_action("move_down", [KEY_S, KEY_DOWN])
+    _ensure_key_action("attack", [KEY_J])
+    _ensure_key_action("dodge", [KEY_SPACE])
+    _ensure_key_action("interact", [KEY_E])
+
+func _ensure_key_action(action: StringName, keys: Array) -> void:
+    if not InputMap.has_action(action):
+        InputMap.add_action(action)
+    for key in keys:
+        var event := InputEventKey.new()
+        event.physical_keycode = key
+        if not _action_has_key(action, key):
+            InputMap.action_add_event(action, event)
+
+func _action_has_key(action: StringName, key: int) -> bool:
+    for event in InputMap.action_get_events(action):
+        if event is InputEventKey and event.physical_keycode == key:
+            return true
+    return false
 
 func _physics_process(_delta: float) -> void:
     if stage == 0 and player.position.x > 360.0:
