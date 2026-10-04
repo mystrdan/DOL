@@ -68,9 +68,9 @@ See:
 
 ## Step 6 — Technical plan
 
-- [ ] Choose engine
-- [ ] Define architecture
-- [ ] Define mobile input
+- [x] Choose engine
+- [x] Define architecture
+- [x] Define mobile input
 - [ ] Define controller abstraction
 - [ ] Define save and progression model
 - [ ] Define asset pipeline
@@ -78,11 +78,11 @@ See:
 
 ## Step 7 — Prototype
 
-- [ ] First playable scene
-- [ ] Player controller
-- [ ] First interaction
-- [ ] First enemy or challenge
-- [ ] First win or lose condition
+- [x] First playable scene
+- [x] Player controller
+- [x] First interaction
+- [x] First enemy or challenge
+- [x] First win or lose condition
 - [ ] Playtest
 - [ ] Fix
 - [ ] Repeat
