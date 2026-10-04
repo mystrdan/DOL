@@ -16,10 +16,6 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/default_filters/use_nearest_mipmap_filter=false
 
-[application]
-config/name="Dawn of Longlat"
-config/description="DOL — a mobile-first action-adventure prototype."
-run/main_scene="res://scenes/prototype/main.tscn"
 run/max_fps=60
 
 [input_devices]
