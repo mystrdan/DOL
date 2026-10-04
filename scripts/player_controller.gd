@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 
     if dodge_timer > 0.0:
         velocity = facing * dodge_speed
+        state = "dodge"
     else:
         var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
         if input_vector.length() > 0.05:
@@ -53,7 +54,7 @@ func _start_dodge() -> void:
     dodge_cooldown_timer = dodge_cooldown
     state = "dodge"
     action_changed.emit("Dodge")
-    
+
 func _attack() -> void:
     attack_timer = 0.12
     attack_cooldown = 0.28
@@ -78,7 +79,9 @@ func reset_at(spawn_position: Vector2) -> void:
     velocity = Vector2.ZERO
     state = "idle"
     dodge_timer = 0.0
+    dodge_cooldown_timer = 0.0
     attack_timer = 0.0
+    attack_cooldown = 0.0
     health_changed.emit(health, max_health)
     set_physics_process(true)
     action_changed.emit("Recovered")
