@@ -2,7 +2,7 @@
 
 ## Objective
 
-Establish what Dawn of Longlat is before production begins.
+Establish what Dawn of Longlat is before production begins, then prove the smallest fun playable slice.
 
 ## Step 1 — Project foundation
 
@@ -10,23 +10,24 @@ Establish what Dawn of Longlat is before production begins.
 - [x] Establish Game Bible
 - [x] Establish Mythology Bible structure
 - [x] Establish research-first rule
-- [ ] Define complete documentation structure
+- [x] Define core documentation structure
 
 ## Step 2 — World foundation
 
-- [ ] Define what Longlat is
-- [ ] Define geography
-- [ ] Define mortal world
-- [ ] Define spiritual and other realms
+- [x] Define what Longlat is
+- [x] Define broad geography
+- [x] Define mortal world
+- [x] Define spiritual/other realms
 - [ ] Define historical timeline
-- [ ] Define the event behind the Dawn
-- [ ] Define how worlds and realms interact
+- [x] Define the event behind the Dawn at concept level
+- [x] Define how worlds and realms interact at concept level
 
 ## Step 3 — Mythology research
 
-- [ ] Build regional and tradition taxonomy
-- [ ] Research traditions individually
-- [ ] Record sources
+- [x] Build regional and tradition taxonomy
+- [x] Create individual research records across multiple regions
+- [ ] Deep-source the traditions selected for Game 1
+- [ ] Record source/page-level evidence for Game 1 elements
 - [ ] Identify possible game adaptations
 - [ ] Identify cultural boundaries and sensitivities
 
@@ -43,13 +44,17 @@ Establish what Dawn of Longlat is before production begins.
 
 ## Step 5 — Game design
 
-- [ ] Decide core genre
-- [ ] Define core gameplay loop
-- [ ] Define combat and exploration systems
-- [ ] Define progression
-- [ ] Define player abilities
+- [x] Define initial genre/direction
+- [x] Define core gameplay loop
+- [x] Define initial combat and exploration verbs
+- [x] Define simple progression
+- [ ] Define final player abilities for prototype
 - [ ] Define game modes
-- [ ] Define first vertical slice
+- [x] Define first vertical slice
+
+See:
+- `docs/GAMEPLAY.md`
+- `docs/VERTICAL_SLICE.md`
 
 ## Step 6 — Technical plan
 
@@ -71,6 +76,14 @@ Establish what Dawn of Longlat is before production begins.
 - [ ] Playtest
 - [ ] Fix
 - [ ] Repeat
+
+## Scope Guard
+
+DOL is a game, not an attempt to finish an encyclopedia before development.
+
+Research coverage should remain broad enough to prevent cultural flattening, while detailed research effort follows the traditions and places that actually influence the current game.
+
+**Research the continent. Build a world. Ship a game.**
 
 ## Definition of Phase 0 complete
 
