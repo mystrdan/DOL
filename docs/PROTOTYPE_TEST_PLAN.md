@@ -70,7 +70,25 @@ Ask:
 
 Any strong stereotype signal becomes a design issue.
 
-## Test Group F — Cultural Review
+## Test Group F — Settings
+
+Questions:
+- Can a player open Settings without leaving the prototype?
+- Does Screen shake toggle immediately affect combat/Veil feedback?
+- Does Touch controls toggle immediately hide/show the mobile controls?
+- Do settings persist after restarting the game?
+- Can the settings panel be closed without blocking gameplay?
+
+Record:
+- settings opened;
+- each option changed;
+- restart persistence result;
+- any UI overlap or inaccessible controls.
+
+Pass:
+- settings are understandable and changes do not interrupt the core loop.
+
+## Test Group G — Cultural Review
 
 Before final art or release:
 - verify researched cultural references;
