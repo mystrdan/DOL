@@ -34,7 +34,7 @@ Establish what Dawn of Longlat is before production begins, then prove the small
 ## Step 4 — Story
 
 - [ ] Protagonist
-- [ ] Supporting cast
+- [x] Define prototype NPC roles
 - [ ] Antagonistic forces
 - [ ] Central conflict
 - [ ] Acts and chapters
@@ -51,10 +51,20 @@ Establish what Dawn of Longlat is before production begins, then prove the small
 - [ ] Define final player abilities for prototype
 - [ ] Define game modes
 - [x] Define first vertical slice
+- [x] Write implementation-level Game 1 vertical slice specification
+- [x] Define prototype map topology
+- [x] Define prototype player-controller requirements
+- [x] Define prototype HUD/UI
+- [x] Define prototype playtest plan
 
 See:
 - `docs/GAMEPLAY.md`
 - `docs/VERTICAL_SLICE.md`
+- `docs/GAME1_VERTICAL_SLICE_SPEC.md`
+- `docs/PROTOTYPE_MAP_SPEC.md`
+- `docs/PLAYER_CONTROLLER_SPEC.md`
+- `docs/UI_HUD_SPEC.md`
+- `docs/PROTOTYPE_TEST_PLAN.md`
 
 ## Step 6 — Technical plan
 
@@ -88,3 +98,5 @@ Research coverage should remain broad enough to prevent cultural flattening, whi
 ## Definition of Phase 0 complete
 
 We should be able to answer: What is Dawn of Longlat? Who is the player? What happened? What does the player do every minute? Why is it fun? Why is this world worth exploring? How do we represent its inspirations responsibly? What exactly are we building first?
+
+The documentation now answers the last question at implementation level. The remaining Phase 0 work is primarily evidence-backed cultural research, final technical choices, and turning the specification into a playable prototype.
