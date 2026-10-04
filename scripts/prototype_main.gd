@@ -200,9 +200,6 @@ func _setup_npc() -> void:
 func _on_npc_dialogue(line: String) -> void:
     _show_dialogue("Guide: " + line, 4.0)
 
-func _on_npc_dialogue(line: String) -> void:
-    _show_dialogue("Guide: " + line, 4.0)
-
 func _on_player_action(action: String) -> void:
     if action == "Defeated":
         objective_label.text = "Prototype ended"
