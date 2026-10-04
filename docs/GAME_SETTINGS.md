@@ -66,6 +66,31 @@ Do not store save-game progress in the same settings file.
 - Settings must remain usable with touch, mouse, and controller where applicable.
 - Critical settings must have clear labels and visible current state.
 
+
+## Settings implementation order
+
+### Phase A — Prototype
+- Screen shake
+- Touch controls
+- Settings panel
+- Persistent preferences
+
+### Phase B — First playable build
+- Master volume
+- Music volume
+- SFX volume
+- Haptic feedback
+- Tutorial hints
+
+### Phase C — Production
+- Language
+- Subtitles/text accessibility
+- Control remapping
+- Graphics quality
+- Frame-rate options
+
+Do not implement Phase C options merely because the engine supports them.
+
 ## Future settings
 
 Only add these when the game needs them:
