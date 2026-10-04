@@ -319,6 +319,7 @@ func _setup_touch_controls() -> void:
     _bind_button($HUD/TouchControls/Right, "move_right")
     _bind_button($HUD/TouchControls/Attack, "attack")
     _bind_button($HUD/TouchControls/Dodge, "dodge")
+    $HUD/TouchControls.visible = touch_controls_enabled
 
 func _bind_button(button: Button, action: String) -> void:
     button.button_down.connect(func(): Input.action_press(action))
