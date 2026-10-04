@@ -17,6 +17,10 @@ var checkpoint_position := Vector2(180, 360)
 var player_flash_timer := 0.0
 var dialogue_timer := 0.0
 var veil_pulse := 0.0
+var settings := ConfigFile.new()
+var screen_shake_enabled := true
+var touch_controls_enabled := true
+var settings_panel: PanelContainer
 
 func _ready() -> void:
     _setup_input_map()
@@ -38,6 +42,8 @@ func _ready() -> void:
     player.action_changed.connect(_on_player_action)
     player.health_changed.connect(_on_health_changed)
 
+    _load_game_settings()
+    _setup_settings_ui()
     _setup_touch_controls()
     _setup_npc()
     _setup_interaction()
@@ -122,7 +128,7 @@ func _trigger_veil() -> void:
     _set_stage(3)
     _show_dialogue("The air folds. For a moment, the landscape is somewhere else.", 3.0)
     var camera = $Player/Camera2D
-    if camera.has_method("shake"):
+    if screen_shake_enabled and camera.has_method("shake"):
         camera.shake(8.0, 0.24)
     _spawn_enemy()
 
@@ -154,7 +160,7 @@ func _on_player_attack(hit_position: Vector2, direction: Vector2) -> void:
         if enemy.has_method("hit_from"):
             enemy.hit_from(direction)
         var camera = $Player/Camera2D
-        if camera.has_method("shake"):
+        if screen_shake_enabled and camera.has_method("shake"):
             camera.shake(4.0, 0.10)
         status_label.text = "The Veil-Torn recoils."
 
@@ -162,7 +168,7 @@ func _on_enemy_hit_player(amount: int) -> void:
     player.take_damage(amount)
     player_flash_timer = 0.12
     var camera = $Player/Camera2D
-    if camera.has_method("shake"):
+    if screen_shake_enabled and camera.has_method("shake"):
         camera.shake(5.0, 0.14)
     if player.health > 0:
         status_label.text = "The Veil-Torn strikes."
@@ -243,6 +249,68 @@ func _show_dialogue(message: String, seconds: float) -> void:
     dialogue_label.text = message
     dialogue_label.visible = true
     dialogue_timer = seconds
+
+
+func _load_game_settings() -> void:
+    if settings.load("user://settings.cfg") != OK:
+        settings.set_value("game", "screen_shake", true)
+        settings.set_value("game", "touch_controls", true)
+        settings.save("user://settings.cfg")
+    screen_shake_enabled = bool(settings.get_value("game", "screen_shake", true))
+    touch_controls_enabled = bool(settings.get_value("game", "touch_controls", true))
+
+func _setup_settings_ui() -> void:
+    var settings_button := Button.new()
+    settings_button.text = "SETTINGS"
+    settings_button.position = Vector2(1080, 24)
+    settings_button.size = Vector2(150, 42)
+    settings_button.pressed.connect(_toggle_settings)
+    $HUD.add_child(settings_button)
+
+    settings_panel = PanelContainer.new()
+    settings_panel.position = Vector2(820, 90)
+    settings_panel.size = Vector2(330, 300)
+    settings_panel.visible = false
+    $HUD.add_child(settings_panel)
+
+    var box := VBoxContainer.new()
+    box.add_theme_constant_override("separation", 12)
+    settings_panel.add_child(box)
+
+    var title := Label.new()
+    title.text = "GAME SETTINGS"
+    box.add_child(title)
+
+    var shake := CheckButton.new()
+    shake.text = "Screen shake"
+    shake.button_pressed = screen_shake_enabled
+    shake.toggled.connect(_set_screen_shake)
+    box.add_child(shake)
+
+    var touch := CheckButton.new()
+    touch.text = "Touch controls"
+    touch.button_pressed = touch_controls_enabled
+    touch.toggled.connect(_set_touch_controls)
+    box.add_child(touch)
+
+    var close := Button.new()
+    close.text = "Close"
+    close.pressed.connect(_toggle_settings)
+    box.add_child(close)
+
+func _toggle_settings() -> void:
+    settings_panel.visible = not settings_panel.visible
+
+func _set_screen_shake(enabled: bool) -> void:
+    screen_shake_enabled = enabled
+    settings.set_value("game", "screen_shake", enabled)
+    settings.save("user://settings.cfg")
+
+func _set_touch_controls(enabled: bool) -> void:
+    touch_controls_enabled = enabled
+    $HUD/TouchControls.visible = enabled
+    settings.set_value("game", "touch_controls", enabled)
+    settings.save("user://settings.cfg")
 
 func _setup_touch_controls() -> void:
     _bind_button($HUD/TouchControls/Up, "move_up")
