@@ -64,6 +64,7 @@ func _physics_process(_delta: float) -> void:
         _set_stage(4)
 
     debug_label.text = "Prototype • Position %s • State %s" % [player.position.round(), player.state]
+    queue_redraw()
 
 func _set_stage(value: int) -> void:
     stage = value
