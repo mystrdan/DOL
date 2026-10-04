@@ -17,6 +17,7 @@ var attack_cooldown := 0.0
 signal attacked(position: Vector2, direction: Vector2)
 signal health_changed(current: int, maximum: int)
 signal action_changed(action: String)
+signal defeated
 
 func _ready() -> void:
     health = max_health
@@ -68,4 +69,16 @@ func take_damage(amount: int) -> void:
     action_changed.emit("Hit")
     if health <= 0:
         action_changed.emit("Defeated")
+        defeated.emit()
         set_physics_process(false)
+
+func reset_at(spawn_position: Vector2) -> void:
+    global_position = spawn_position
+    health = max_health
+    velocity = Vector2.ZERO
+    state = "idle"
+    dodge_timer = 0.0
+    attack_timer = 0.0
+    health_changed.emit(health, max_health)
+    set_physics_process(true)
+    action_changed.emit("Recovered")
