@@ -10,6 +10,8 @@ var stage := 0
 var veil_triggered := false
 var enemy_defeated := false
 var interactable: Area2D
+var checkpoint_position := Vector2(180, 360)
+var restart_label: Label
 
 func _ready() -> void:
     _setup_input_map()
@@ -18,12 +20,19 @@ func _ready() -> void:
     status_label = $HUD/Status
     health_label = $HUD/Health
     debug_label = $HUD/Debug
+    player.defeated.connect(_on_player_defeated)
+    restart_label = Label.new()
+    restart_label.position = Vector2(32, 145)
+    restart_label.text = "Defeated — press R to restart"
+    restart_label.visible = false
+    $HUD.add_child(restart_label)
 
     player.attacked.connect(_on_player_attack)
     player.action_changed.connect(_on_player_action)
     player.health_changed.connect(_on_health_changed)
 
     _setup_touch_controls()
+    _setup_npc()
     _setup_interaction()
     _set_stage(0)
     queue_redraw()
@@ -36,6 +45,7 @@ func _setup_input_map() -> void:
     _ensure_key_action("attack", [KEY_J])
     _ensure_key_action("dodge", [KEY_SPACE])
     _ensure_key_action("interact", [KEY_E])
+    _ensure_key_action("restart", [KEY_R])
 
 func _ensure_key_action(action: StringName, keys: Array) -> void:
     if not InputMap.has_action(action):
@@ -59,6 +69,9 @@ func _physics_process(_delta: float) -> void:
         _set_stage(2)
     elif stage == 2 and player.position.x > 900.0:
         _trigger_veil()
+
+    if Input.is_action_just_pressed("restart") and restart_label.visible:
+        _restart_from_checkpoint()
 
     if enemy_defeated and stage == 3:
         _set_stage(4)
@@ -127,6 +140,28 @@ func _on_enemy_hit_player(amount: int) -> void:
 func _on_enemy_defeated() -> void:
     enemy_defeated = true
     status_label.text = "The creature collapses. The Veil remains."
+
+func _on_player_defeated() -> void:
+    restart_label.visible = true
+    objective_label.text = "Prototype ended"
+    status_label.text = "You were defeated. Press R to restart."
+
+func _restart_from_checkpoint() -> void:
+    restart_label.visible = false
+    veil_triggered = false
+    enemy_defeated = false
+    if is_instance_valid(enemy):
+        enemy.queue_free()
+    player.reset_at(checkpoint_position)
+    _set_stage(0)
+
+func _setup_npc() -> void:
+    var npc := Node2D.new()
+    npc.name = "SettlementGuide"
+    npc.position = Vector2(290, 350)
+    add_child(npc)
+    npc.set_script(load("res://scripts/prototype_npc.gd"))
+    npc.setup(player, status_label)
 
 func _on_player_action(action: String) -> void:
     if action == "Defeated":
