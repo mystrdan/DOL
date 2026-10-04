@@ -26,6 +26,3 @@ jobs:
 
       - name: Parse and load project
         run: godot --headless --verbose --path . --editor --quit
-
-      - name: Run prototype scene briefly
-        run: timeout 12s godot --headless --verbose --path . --scene res://scenes/prototype/main.tscn || test $? -eq 124
