@@ -79,6 +79,20 @@ Sources:
 - https://www.si.edu/object/historical-dimensions-tano-worship-among-asante-and-bono%3Asiris_sil_529065
 - https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2025.1457544/full
 
+
+### Sacred groves and water — research guardrail
+
+University of Ghana research documents sacred groves and associated water features in specific Ghanaian contexts, including the Kyenku shrine, Osukwakwa stream, and Kyenku waterfall. Other University of Ghana research describes customary water governance in which some water sources and surrounding areas can have restrictions, closed periods, or sacred status. These findings reinforce that sacred landscapes are locally specific institutions rather than interchangeable fantasy locations. citeturn0search24turn0search25
+
+DOL use:
+
+- The Longlat sacred landscape should be fictional and community-specific.
+- Its environmental function should be visible before any supernatural interpretation.
+- If a real-world reference is eventually used, record its exact community, source, variation, and adaptation risk.
+- Never turn sacred-grove restrictions into a generic “magic barrier.”
+- Never imply that all Ghanaian or Akan communities share one identical rule system.
+
+
 ## What this means for the current prototype
 
 The first playable slice should remain **DOL-original** at the supernatural layer:
