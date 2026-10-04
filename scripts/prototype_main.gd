@@ -15,7 +15,6 @@ var veil_triggered := false
 var enemy_defeated := false
 var checkpoint_position := Vector2(180, 360)
 var player_flash_timer := 0.0
-var hit_pause_timer := 0.0
 var dialogue_timer := 0.0
 var veil_pulse := 0.0
 
@@ -79,9 +78,6 @@ func _process(delta: float) -> void:
         dialogue_label.visible = false
 
 func _physics_process(delta: float) -> void:
-    if hit_pause_timer > 0.0:
-        hit_pause_timer = maxf(hit_pause_timer - delta, 0.0)
-
     if stage == 0 and player.position.x > 360.0:
         _set_stage(1)
     elif stage == 1 and player.position.x > 650.0:
@@ -155,7 +151,6 @@ func _on_player_attack(hit_position: Vector2, direction: Vector2) -> void:
     if enemy.global_position.distance_to(hit_position) <= 65.0:
         enemy.take_damage(15)
         player_flash_timer = 0.10
-        hit_pause_timer = 0.045
         if enemy.has_method("hit_from"):
             enemy.hit_from(direction)
         var camera = $Player/Camera2D
@@ -200,7 +195,10 @@ func _setup_npc() -> void:
     npc.position = Vector2(290, 350)
     add_child(npc)
     npc.set_script(load("res://scripts/prototype_npc.gd"))
-    npc.setup(player, status_label)
+    npc.setup(player, status_label, _on_npc_dialogue)
+
+func _on_npc_dialogue(line: String) -> void:
+    _show_dialogue("Guide: " + line, 4.0)
 
 func _on_player_action(action: String) -> void:
     if action == "Defeated":
