@@ -200,6 +200,9 @@ func _setup_npc() -> void:
 func _on_npc_dialogue(line: String) -> void:
     _show_dialogue("Guide: " + line, 4.0)
 
+func _on_npc_dialogue(line: String) -> void:
+    _show_dialogue("Guide: " + line, 4.0)
+
 func _on_player_action(action: String) -> void:
     if action == "Defeated":
         objective_label.text = "Prototype ended"
@@ -285,7 +288,10 @@ func _draw() -> void:
     if player_flash_timer > 0.0:
         player_color = Color("#ffffff")
     draw_circle(player.position, 18.0, player_color)
-    draw_line(player.position, player.position + player.facing * 25.0, Color("#3b3026"), 3.0)
+    var facing := player.get("facing") as Vector2
+    if facing == null:
+        facing = Vector2.RIGHT
+    draw_line(player.position, player.position + facing * 25.0, Color("#3b3026"), 3.0)
 
     if is_instance_valid(enemy):
         var enemy_color := Color("#8d6b52")
