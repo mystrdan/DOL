@@ -52,6 +52,33 @@ Sources:
 - https://www.metmuseum.org/art/collection/search/312182
 - https://artmuseum.princeton.edu/art/collections/objects/41743
 
+
+### Water, rivers, and sacred landscape — Akan research update
+
+Recent research strengthens the decision to treat the prototype river as a social/environmental space rather than a fantasy “water magic” zone.
+
+Evidence:
+
+- A University of Cape Coast-hosted study of Akan sacred groves describes water bodies within some sacred groves as being under the care of the grove's deity and notes restrictions around access and conduct.
+- A University of Ghana/Queens University-hosted study records respect for rivers, seas, lagoons, and lakes in indigenous Akan contexts and discusses taboos associated with particular water bodies.
+- Smithsonian Libraries records historical research on Tano worship among Asante and Bono communities and identifies Tano as a river deity with continuing shrine traditions in the Bono area.
+- Recent research on the Kwahu Traditional Area documents locally specific rules around sacred water bodies and warns against treating these practices as a single universal Akan rule.
+
+DOL implication:
+
+- The Longlat river should first communicate ordinary life: movement, access, crossing, settlement needs, ecology, and community memory.
+- If a sacred-water reference is eventually used, the exact community and tradition must be named in the adaptation record.
+- Do not create a generic “river spirit” enemy from this research.
+- Do not turn taboos or sacred restrictions into collectible game mechanics.
+- The Dawn anomaly can disturb an otherwise ordinary river without claiming that a real-world river deity caused the disturbance.
+
+Sources:
+
+- https://ir.ucc.edu.gh/xmlui/bitstream/handle/123456789/7071/Salvaging%20Nature%20%20the%20Akan%20religion%20cultural%20perspective.pdf
+- https://qspace.library.queensu.ca/bitstreams/084ba1c8-c3e9-41a8-b66b-db68bc9a42db/download
+- https://www.si.edu/object/historical-dimensions-tano-worship-among-asante-and-bono%3Asiris_sil_529065
+- https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2025.1457544/full
+
 ## What this means for the current prototype
 
 The first playable slice should remain **DOL-original** at the supernatural layer:
