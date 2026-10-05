@@ -326,30 +326,8 @@ func _bind_button(button: Button, action: String) -> void:
     button.button_up.connect(func(): Input.action_release(action))
 
 func _draw() -> void:
-    draw_rect(Rect2(0, 0, 1280, 720), Color("#171717"))
-    draw_rect(Rect2(80, 250, 280, 220), Color("#242424"))
-    draw_rect(Rect2(390, 310, 260, 90), Color("#303030"))
-    draw_rect(Rect2(680, 220, 180, 300), Color("#262626"))
-
-    var veil_radius := 90.0
-    if veil_triggered:
-        veil_radius += sin(Time.get_ticks_msec() * 0.006) * 8.0
-    if veil_pulse > 0.0:
-        veil_radius += veil_pulse * 35.0
-    draw_circle(Vector2(1000, 360), veil_radius, Color("#333333"))
-    if not veil_triggered:
-        draw_arc(Vector2(1000, 360), 90.0, 0.0, TAU, 32, Color("#666666"), 2.0)
-    else:
-        var intensity := 1.0 + sin(Time.get_ticks_msec() * 0.012) * 0.25
-        draw_arc(Vector2(1000, 360), veil_radius, 0.0, TAU, 32, Color(0.65, 0.55, 0.38, intensity), 3.0)
-        draw_line(Vector2(965, 325), Vector2(1035, 395), Color("#8d6b52"), 2.0)
-        draw_line(Vector2(1035, 325), Vector2(965, 395), Color("#8d6b52"), 2.0)
-
-    draw_string(ThemeDB.fallback_font, Vector2(105, 285), "LONGLAT SETTLEMENT")
-    draw_string(ThemeDB.fallback_font, Vector2(470, 300), "OLD ROAD")
-    draw_string(ThemeDB.fallback_font, Vector2(720, 255), "RIVER")
-    draw_string(ThemeDB.fallback_font, Vector2(930, 365), "DAMAGED VEIL")
-
+    # World presentation is handled by prototype_visuals.gd.
+    # Keep only player/enemy feedback here so gameplay state remains separate.
     var player_color := Color("#d8c7a8")
     if player_flash_timer > 0.0:
         player_color = Color("#ffffff")
