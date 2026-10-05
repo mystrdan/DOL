@@ -36,7 +36,7 @@ The prototype is not the full game.
 ### Explicitly excluded
 - Open world
 - Multiplayer
-- Character roster
+- Large character roster
 - Full skill tree
 - Crafting
 - Inventory economy
@@ -60,6 +60,14 @@ The prototype is not the full game.
 | S06 | Damaged Veil | 11–13 min |
 | S07 | Combat arena | 13–15 min |
 | S08 | Safe return / reveal | 15 min+ |
+
+## Opening character flow
+
+Before S01, the player passes through a compact character-creation sequence:
+
+**Opening choices → character selection → appearance → confirmation → Longlat Marches**
+
+The prototype should use a small authored set and store the selected profile. Do not let customization expand the first combat slice.
 
 ## Player
 
@@ -194,6 +202,12 @@ Minimum implementation:
 - debug reset to beginning.
 
 A full save system is not required for the vertical slice.
+
+## Progression boundary
+
+The full game will support leveling, XP, skills, costumes, appearance options and character-specific abilities. These systems are intentionally outside the first combat balance pass.
+
+The vertical slice establishes the data boundary: the selected character/profile enters gameplay independently from movement and combat code.
 
 ## Asset Strategy
 
