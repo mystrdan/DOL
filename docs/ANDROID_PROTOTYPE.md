@@ -15,8 +15,8 @@ For a local Godot 4.7.2 export, install:
 
 1. Godot 4.7.2 stable.
 2. OpenJDK 17.
-3. Android SDK and the Android build tools/platform required by the selected Godot version.
-4. Godot's Android export templates.
+3. Android SDK with Platform-Tools 35.0.0+, Build-Tools 35.0.1, Android Platform 35, Command-line Tools, CMake 3.10.2.4988404, and NDK r28b (28.1.13356709), following the Godot 4.7 export guidance.
+4. Godot's matching Android export templates. citeturn0search0turn0search3
 
 Then configure the Android SDK/JDK paths in Editor > Editor Settings > Export > Android.
 
