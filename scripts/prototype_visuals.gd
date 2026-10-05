@@ -1,5 +1,11 @@
 extends Node2D
 
+var veil_active := false
+
+func set_veil_active(active: bool) -> void:
+    veil_active = active
+    queue_redraw()
+
 func _draw() -> void:
     # Functional greybox: settlement, road, river, community landscape, Veil.
     draw_rect(Rect2(80, 250, 280, 220), Color("#242424"))
@@ -31,9 +37,16 @@ func _draw() -> void:
     draw_rect(Rect2(505, 338, 10, 35), Color("#5a5145"))
     draw_line(Vector2(510, 338), Vector2(520, 328), Color("#5a5145"), 3.0)
 
-    # Veil remains the strongest anomaly.
-    draw_arc(Vector2(1000, 360), 90.0, 0.0, TAU, 48, Color("#7b624e"), 3.0)
-    draw_arc(Vector2(1000, 360), 62.0, 0.3, TAU - 0.3, 40, Color("#4e4137"), 2.0)
+    # Before the event, the Veil is only a subtle environmental irregularity.
+    # Once triggered, it becomes the first unmistakable supernatural landmark.
+    if veil_active:
+        draw_arc(Vector2(1000, 360), 90.0, 0.0, TAU, 48, Color("#7b624e"), 3.0)
+        draw_arc(Vector2(1000, 360), 62.0, 0.3, TAU - 0.3, 40, Color("#4e4137"), 2.0)
+        draw_line(Vector2(930, 300), Vector2(1070, 420), Color("#5f4c3f"), 2.0)
+        draw_line(Vector2(1070, 300), Vector2(930, 420), Color("#5f4c3f"), 2.0)
+    else:
+        draw_arc(Vector2(1000, 360), 48.0, 0.0, TAU, 36, Color("#44403a"), 1.0)
+        draw_line(Vector2(980, 360), Vector2(1020, 360), Color("#4a463f"), 2.0)
 
 func _ready() -> void:
     z_index = -1
