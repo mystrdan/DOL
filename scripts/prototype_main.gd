@@ -126,6 +126,7 @@ func _trigger_veil() -> void:
     veil_triggered = true
     veil_pulse = 0.45
     _set_stage(3)
+    $Visuals.set_veil_active(true)
     _show_dialogue("The air folds. For a moment, the landscape is somewhere else.", 3.0)
     var camera = $Player/Camera2D
     if screen_shake_enabled and camera.has_method("shake"):
@@ -189,6 +190,7 @@ func _restart_from_checkpoint() -> void:
     veil_triggered = false
     enemy_defeated = false
     veil_pulse = 0.0
+    $Visuals.set_veil_active(false)
     if is_instance_valid(enemy):
         enemy.queue_free()
     player.reset_at(checkpoint_position)
