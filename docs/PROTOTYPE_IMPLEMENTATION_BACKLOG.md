@@ -7,65 +7,66 @@ Turn the Game 1 vertical slice specification into the smallest executable protot
 ## Build Order
 
 ### P0 — Project bootstrap
-- [ ] Create project using the selected engine/runtime.
-- [ ] Create Main/Prototype scene.
-- [ ] Establish input abstraction.
-- [ ] Establish scene/state management.
+- [x] Create project using the selected engine/runtime.
+- [x] Create Main/Prototype scene.
+- [x] Establish input abstraction.
+- [x] Establish prototype progression/state management.
 - [ ] Add debug build flag.
 
 ### P0 — Player
-- [ ] Player root/controller.
-- [ ] Movement.
-- [ ] Camera.
-- [ ] Collision.
-- [ ] Interaction detector.
-- [ ] Health/death.
-- [ ] Checkpoint respawn.
+- [x] Player root/controller.
+- [x] Movement.
+- [x] Camera.
+- [x] Collision.
+- [x] Interaction detector.
+- [x] Health/death.
+- [x] Checkpoint respawn.
 
 ### P0 — World
-- [ ] Block out Longlat Gate.
-- [ ] Block out settlement.
-- [ ] Block out common yard.
-- [ ] Block out Old Road.
-- [ ] Block out river crossing.
-- [ ] Block out sacred/community landscape.
-- [ ] Block out Veil.
-- [ ] Block out combat clearing.
-- [ ] Block out return route.
+- [x] Block out Longlat Gate / settlement entry.
+- [x] Block out settlement.
+- [x] Block out common yard.
+- [x] Block out Old Road.
+- [x] Block out river crossing.
+- [x] Block out sacred/community landscape.
+- [x] Block out Veil.
+- [x] Block out combat clearing.
+- [ ] Block out return route as a distinct presentation zone.
 
 ### P0 — Interaction
-- [ ] Interaction prompt.
-- [ ] NPC interaction.
-- [ ] Short dialogue system.
-- [ ] Objective updates.
-- [ ] Zone triggers.
+- [x] Interaction prompt (text/status prototype).
+- [x] NPC interaction.
+- [x] Short dialogue system.
+- [x] Objective updates.
+- [x] Zone triggers.
 
 ### P0 — Combat
-- [ ] Light attack.
-- [ ] Dodge.
-- [ ] Hit detection.
-- [ ] Damage/recovery.
-- [ ] Veil-Torn state machine.
+- [x] Light attack.
+- [x] Dodge.
+- [x] Hit detection.
+- [x] Damage/recovery.
+- [x] Veil-Torn pursuit/attack state.
 - [ ] Rush.
 - [ ] Swipe.
 - [ ] Veil Pulse.
 - [ ] Retreat.
-- [ ] Death/defeat.
+- [x] Death/defeat.
 
 ### P1 — First Veil
-- [ ] Dormant state.
+- [x] Dormant state (subtle visual landmark).
 - [ ] Disturbed state.
-- [ ] Torn state.
+- [x] Torn state (combat trigger + active visual).
 - [ ] Spatial Echo.
 - [ ] Audio transition.
-- [ ] Combat trigger.
+- [x] Combat trigger.
 
 ### P1 — HUD
-- [ ] Health.
-- [ ] Objective.
-- [ ] Interaction prompt.
-- [ ] Touch controls.
-- [ ] Pause/restart.
+- [x] Health.
+- [x] Objective.
+- [x] Interaction prompt.
+- [x] Touch controls.
+- [x] Restart.
+- [ ] Full pause menu.
 - [ ] First-use hints.
 
 ### P1 — Audio
@@ -110,3 +111,10 @@ Anything beyond that is optional until the loop is proven.
 ## Rule
 
 **Greybox first. Feel first. Research alongside. Polish last.**
+
+
+## Current verification state
+
+The repository contains the prototype code and greybox scene, but the current environment has not executed a Godot build. Treat runtime behavior as **unverified** until the project is opened/run in Godot 4.7.2 or an equivalent CI environment.
+
+Latest implementation focus: keep world presentation state-driven and prevent supernatural landmarks from appearing fully active before their narrative trigger.
