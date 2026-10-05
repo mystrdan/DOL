@@ -130,3 +130,37 @@ Before a sacred place, religious symbol, deity, spirit, ritual object, language 
 ## Status
 
 This is a research index, not a completed mythology chapter. No item above should be treated as a license to copy sacred material directly into DOL.
+
+
+### Ancestors, burial, remembrance, and community memory — research update
+
+Recent University of Ghana research gives DOL a useful warning: death and remembrance should not be reduced to a single pan-African “ancestor system.”
+
+Evidence:
+
+- Research on contemporary Akan funerals describes funeral celebrations as socially important public events and emphasizes that practices have changed over time. citeturn0search1turn0search3
+- Research on Akan mourning draws on lived/emic perspectives and treats mourning and funeral obsequies as culturally and spiritually significant, while also showing that social roles and gender shape the practices. citeturn0search7
+- Research on the Dagaaba of northwestern Ghana describes beliefs about death and the hereafter as socially, morally, religiously, and materially integrated into community life, with ancestors connected to moral life. citeturn0search6
+- Research on Akuapem documents a historical case in which Christian funeral practice and traditional chieftaincy/ancestor-veneration traditions converged, demonstrating that religious and cultural practice can overlap rather than forming sealed factions. citeturn0search8
+- Research on Kasena burial and funeral rites shows that Christian influence can change specific traditional practices; this reinforces the need to study a named community rather than invent a generic “African funeral.” citeturn0search12
+
+DOL implication:
+
+- Community memory can be a major part of Longlat's world without making ancestors into combat enemies.
+- A funeral, memorial, family compound, cemetery, or remembrance object must belong to a specific fictional community/context before final design.
+- Contemporary religious coexistence can produce overlap and negotiation; it should not automatically become a conflict system. Research on Ghanaian Christian-Muslim engagement and urban religious diversity supports depicting coexistence as a real social condition. citeturn0search4turn0search0
+- If ancestors appear in Game 1, their narrative function should initially be memory, lineage, moral history, or unresolved community questions—not a generic summonable power.
+- Do not use death rituals as collectible mechanics, enemy archetypes, or spectacle.
+- Do not imply that one Akan, Dagaaba, Kasena, or other community's practices represent all African traditions.
+
+Prototype decision:
+
+The current 10–15 minute prototype does **not** need an ancestor mechanic, funeral quest, or death-realm system. The safer and more useful first step is ordinary environmental storytelling: family/community memory, old markers, settlement history, and NPC testimony.
+
+Sources:
+
+- https://ugspace.ug.edu.gh/items/82787cff-8aaa-484f-a68b-c89b4c9cff53
+- https://ugspace.ug.edu.gh/items/c19b525a-e2ce-40f8-b7c9-edba36a1ed20
+- https://ugspace.ug.edu.gh/items/33f604e2-8412-401a-a329-a78b5359d5d2
+- https://ugspace.ug.edu.gh/items/add6ae24-7887-48d5-b6af-40131217adfc
+- https://ugspace.ug.edu.gh/items/94c958cb-fe8c-4390-a786-3a42d3086968
