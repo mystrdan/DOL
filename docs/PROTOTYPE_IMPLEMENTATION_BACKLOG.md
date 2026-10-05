@@ -12,6 +12,8 @@ Turn the Game 1 vertical slice specification into the smallest executable protot
 - [x] Establish input abstraction.
 - [x] Establish prototype progression/state management.
 - [ ] Add debug build flag.
+- [x] Add player profile persistence foundation separate from settings.
+- [ ] Add opening choice/character-selection UI.
 
 ### P0 — Player
 - [x] Player root/controller.
@@ -68,6 +70,7 @@ Turn the Game 1 vertical slice specification into the smallest executable protot
 - [x] Restart.
 - [ ] Full pause menu.
 - [ ] First-use hints.
+- [ ] Character identity/profile summary HUD.
 
 ### P1 — Audio
 - [ ] Settlement ambience placeholder.
@@ -118,3 +121,5 @@ Anything beyond that is optional until the loop is proven.
 The repository contains the prototype code and greybox scene, but the current environment has not executed a Godot build. Treat runtime behavior as **unverified** until the project is opened/run in Godot 4.7.2 or an equivalent CI environment.
 
 Latest implementation focus: keep world presentation state-driven and prevent supernatural landmarks from appearing fully active before their narrative trigger.
+
+Character architecture foundation is now implemented with data-driven character definitions, persistent player profile state, and a separate save manager. The opening UI is intentionally still pending so the prototype does not pretend the full creation flow exists before it is wired and tested.
