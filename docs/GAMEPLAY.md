@@ -48,14 +48,15 @@ The player learns through:
 Lore should never interrupt normal play unnecessarily.
 
 ### Progression
-The first build uses simple progression:
-- player health;
-- basic combat improvement;
-- one or two meaningful abilities;
-- story progression;
-- optional discoveries.
+The full game uses player-led progression:
+- opening choices and character selection;
+- level and XP progression;
+- skill upgrades;
+- character-specific abilities;
+- costumes and appearance customization;
+- story and discovery progression.
 
-Avoid skill-tree bloat during the first prototype.
+The first prototype only proves the architecture and one small progression path. Avoid skill-tree bloat until the core combat loop is proven.
 
 ## 3. Game Loop
 
